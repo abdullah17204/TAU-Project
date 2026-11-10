@@ -32,8 +32,5 @@ public class LoginTests extends BaseTests{
             Assert.assertTrue(errorMessage.contains("invalid!"), "Invalid credentials logged in");
         }
     }
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
+
 }
