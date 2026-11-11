@@ -22,7 +22,7 @@ public class HomePage {
     }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText(linkText))).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
         }
 
     public HomePage(WebDriver driver) {this.driver=driver;}
