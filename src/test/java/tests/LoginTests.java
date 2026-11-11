@@ -22,12 +22,14 @@ public class LoginTests extends BaseTests{
             // Valid Login Credentials
             SecurePage securePage = new SecurePage(driver);
             String pageFlashTest = securePage.getFlashTest();
-            Assert.assertTrue(pageFlashTest.contains( "You logged into a secure area!"), "Valid login credentials failed");
+            Assert.assertTrue(pageFlashTest.contains( "You logged into a secure area!"),
+                    "Valid login credentials failed");
         }
         else {
             // Invalid login Credentials
             String errorMessage = loginPage.getFailFlash();
-            Assert.assertTrue(errorMessage.contains("invalid!"), "Invalid credentials logged in");
+            Assert.assertTrue(errorMessage.contains("invalid!"),
+                    "Invalid credentials logged in");
         }
     }
 
