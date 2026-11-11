@@ -13,7 +13,7 @@ public class HomePage {
 //    private final By dropDown = By.partialLinkText("Dropdown");
 
     public LoginPage clickFormAuth() {
-        clickLink("Form Auth");
+        clickLink("Form Authentication");
         return new LoginPage(driver);
     }
     public DropDownPage clickDropDown() {
