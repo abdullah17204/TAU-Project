@@ -9,19 +9,21 @@ import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
-    private final By formAuth = By.partialLinkText("Form Auth");
-    private final By dropDown = By.partialLinkText("Dropdown");
+//    private final By formAuth = By.partialLinkText("Form Auth");
+//    private final By dropDown = By.partialLinkText("Dropdown");
 
     public LoginPage clickFormAuth() {
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(formAuth)).click();
+        clickLink("Form Auth");
         return new LoginPage(driver);
     }
     public DropDownPage clickDropDown() {
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(dropDown));
+        clickLink("Dropdown");
         return new DropDownPage(driver);
     }
+    public void clickLink(String linkText) {
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText(linkText))).click();
+        }
 
     public HomePage(WebDriver driver) {this.driver=driver;}
 
