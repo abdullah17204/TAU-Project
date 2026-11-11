@@ -12,13 +12,15 @@ public class HomePage {
     private final By formAuth = By.partialLinkText("Form Auth");
     private final By dropDown = By.partialLinkText("Dropdown");
 
-    public void clickFormAuth() {
+    public LoginPage clickFormAuth() {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(formAuth)).click();
+        return new LoginPage(driver);
     }
-    public void clickDropDown() {
+    public DropDownPage clickDropDown() {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(dropDown));
+        return new DropDownPage(driver);
     }
 
     public HomePage(WebDriver driver) {this.driver=driver;}

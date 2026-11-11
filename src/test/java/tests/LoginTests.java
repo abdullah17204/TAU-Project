@@ -13,9 +13,9 @@ public class LoginTests extends BaseTests{
     public void loginTest(String username,String password,boolean expectedResult){
 
         HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = homePage.clickFormAuth();;
 
-        homePage.clickFormAuth();
+
         loginPage.login(username, password);
 
         if (expectedResult) {
