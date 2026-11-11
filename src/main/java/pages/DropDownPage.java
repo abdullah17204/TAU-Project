@@ -8,5 +8,7 @@ public class DropDownPage {
     private By dropDown = By.id("dropdown");
     public DropDownPage(WebDriver driver) {this.driver = driver;}
 
-    public DropDownPage clickDropDown() {}
+    public void selectFromDropDown(String dropDownOption) {
+
+    }
 }
