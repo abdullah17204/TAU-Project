@@ -4,14 +4,16 @@
     <test name="Chrome Execution">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.LoginTests"/>
+            <!-- <class name="tests.LoginTests"/> -->
+            <class name="tests.DropDownTests"/>
         </classes>
     </test>
 
     <test name="Brave Execution">
         <parameter name="browser" value="brave"/>
         <classes>
-            <class name="tests.LoginTests"/>
+            <!-- <class name="tests.LoginTests"/> -->
+            <class name="tests.DropDownTests"/>
         </classes>
     </test>
 
