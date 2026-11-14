@@ -20,6 +20,10 @@ public class HomePage {
         clickLink("Dropdown");
         return new DropDownPage(driver);
     }
+    public ForgotPasswordPage clickForgotPassword() {
+        clickLink("Forgot Password");
+        return new ForgotPasswordPage(driver)
+    }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
