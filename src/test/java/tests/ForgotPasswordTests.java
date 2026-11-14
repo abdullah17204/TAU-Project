@@ -1,5 +1,6 @@
 package tests;
 
+import dataproviders.EmailData;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -8,10 +9,10 @@ import pages.ForgotPasswordPage;
 import pages.HomePage;
 
 public class ForgotPasswordTests extends BaseTests {
-    @Test
-    public void forgotPasswordTest(){
+    @Test (dataProviderClass = EmailData.class, dataProvider = "Emails")
+    public void forgotPasswordTest(String email){
         HomePage homePage = new HomePage(driver);
-        String email = "John@doe.com";
+//        String email = "John@doe.com";
         ForgotPasswordPage forgotPasswordPage = homePage.clickForgotPassword();
         forgotPasswordPage.enterEmail(email);
         EmailSentPage emailSentPage = forgotPasswordPage.clickRetrieve();
