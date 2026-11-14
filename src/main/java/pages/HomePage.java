@@ -22,7 +22,7 @@ public class HomePage {
     }
     public ForgotPasswordPage clickForgotPassword() {
         clickLink("Forgot Password");
-        return new ForgotPasswordPage(driver)
+        return new ForgotPasswordPage(driver);
     }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
