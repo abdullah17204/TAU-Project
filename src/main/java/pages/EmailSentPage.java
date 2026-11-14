@@ -5,14 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class EmailSentPage {
     private WebDriver driver;
-    private WebDriverWait wait;
     private By emailsentconformation = By.id("content");
     public EmailSentPage(WebDriver driver) {this.driver = driver;}
 
     public String getEmailsentconformation()
     {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.presenceOfElementLocated(emailsentconformation)).getText();
     }
 }

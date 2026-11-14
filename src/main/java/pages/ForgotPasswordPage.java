@@ -10,7 +10,6 @@ import java.time.Duration;
 
 public class ForgotPasswordPage {
     private WebDriver driver;
-    private WebDriverWait wait;
     private By emailfield = By.id("email");
     private By retrievebutton =  By.id("form_submit");
 
@@ -18,11 +17,11 @@ public class ForgotPasswordPage {
         this.driver = driver;
     }
     public void enterEmail(String email){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(emailfield)).sendKeys(email);
     }
     public EmailSentPage clickRetrieve (){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(retrievebutton)).click();
         return new EmailSentPage(driver);
     }
