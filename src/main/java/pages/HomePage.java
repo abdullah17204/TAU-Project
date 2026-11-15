@@ -24,6 +24,10 @@ public class HomePage {
         clickLink("Forgot Password");
         return new ForgotPasswordPage(driver);
     }
+    public HoversPage clickHovers(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
