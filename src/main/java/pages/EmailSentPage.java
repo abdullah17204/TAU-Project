@@ -15,6 +15,7 @@ public class EmailSentPage {
     public String getEmailsentconformation()
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.urlContains("email_sent"));
         return wait.until(ExpectedConditions.presenceOfElementLocated(emailsentconformation)).getText();
     }
 }
