@@ -7,9 +7,9 @@ public class HoversData {
     public Object[][] indexes()
     {
         return new Object[][] {
-                {"1","user1"},
-                {"2","user2"},
-                {"3","user3"},
+                {1,"user1"},
+                {2,"user2"},
+                {3,"user3"},
         };
     }
 }

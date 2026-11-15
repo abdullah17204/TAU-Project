@@ -7,6 +7,7 @@
              <class name="tests.LoginTests"/>
             <class name="tests.DropDownTests"/>
             <class name="tests.ForgotPasswordTests"/>
+            <class name="tests.HoversTests"/>
         </classes>
     </test>
 
@@ -16,6 +17,7 @@
              <class name="tests.LoginTests"/>
             <class name="tests.DropDownTests"/>
             <class name="tests.ForgotPasswordTests"/>
+            <class name="tests.HoversTests"/>
         </classes>
     </test>
 
