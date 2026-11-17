@@ -4,10 +4,10 @@
     <test name="Chrome Execution">
         <parameter name="browser" value="chrome"/>
         <classes>
-<!--             <class name="tests.LoginTests"/>-->
-<!--            <class name="tests.DropDownTests"/>-->
-<!--            <class name="tests.ForgotPasswordTests"/>-->
-<!--            <class name="tests.HoversTests"/>-->
+             <class name="tests.LoginTests"/>
+            <class name="tests.DropDownTests"/>
+            <class name="tests.ForgotPasswordTests"/>
+            <class name="tests.HoversTests"/>
                 <class name="tests.SliderTests"/>
         </classes>
     </test>
@@ -15,10 +15,10 @@
     <test name="Brave Execution">
         <parameter name="browser" value="brave"/>
         <classes>
-<!--             <class name="tests.LoginTests"/>-->
-<!--            <class name="tests.DropDownTests"/>-->
-<!--            <class name="tests.ForgotPasswordTests"/>-->
-<!--            <class name="tests.HoversTests"/>-->
+             <class name="tests.LoginTests"/>
+            <class name="tests.DropDownTests"/>
+            <class name="tests.ForgotPasswordTests"/>
+            <class name="tests.HoversTests"/>
         </classes>
     </test>
 
