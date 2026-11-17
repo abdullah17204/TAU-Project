@@ -10,6 +10,7 @@ import java.time.Duration;
 public class SliderPage {
     private WebDriver driver;
     private By slider =  By.cssSelector("input[type='range']");
+    private By sliderValue = By.id("range");
     public SliderPage(WebDriver driver) {
         this.driver=driver;
     }
@@ -17,6 +18,10 @@ public class SliderPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(slider)).click();
         driver.findElement(slider).sendKeys(Integer.toString(number));
+    }
+    public String getSliderValue() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(sliderValue)).getText();
     }
 
 

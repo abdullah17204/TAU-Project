@@ -8,6 +8,7 @@
 <!--            <class name="tests.DropDownTests"/>-->
 <!--            <class name="tests.ForgotPasswordTests"/>-->
 <!--            <class name="tests.HoversTests"/>-->
+                <class name="tests.SliderTests"/>
         </classes>
     </test>
 
