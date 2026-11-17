@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,14 +15,20 @@ public class SliderPage {
     public SliderPage(WebDriver driver) {
         this.driver=driver;
     }
-    public void moveSlider(int number) {
+
+    /**
+     * @param number = the final value the slider should reach
+     */
+    public void moveSlider(double number) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(slider)).click();
-        driver.findElement(slider).sendKeys(Integer.toString(number));
+        while(getSliderValue()!=number){
+            driver.findElement(slider).sendKeys(Keys.ARROW_RIGHT);
+        }
     }
-    public String getSliderValue() {
+    public double getSliderValue() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.presenceOfElementLocated(sliderValue)).getText();
+        var value = wait.until(ExpectedConditions.presenceOfElementLocated(sliderValue)).getText();
+        return Double.parseDouble(value);
     }
 
 
