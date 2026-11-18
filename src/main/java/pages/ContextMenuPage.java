@@ -26,4 +26,7 @@ public class ContextMenuPage {
 //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
        driver.switchTo().alert().accept();
     }
+    public String alert_GetText(){
+        return driver.switchTo().alert().getText();
+    }
 }
