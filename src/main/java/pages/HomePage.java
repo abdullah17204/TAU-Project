@@ -32,6 +32,10 @@ public class HomePage {
         clickLink("Horizontal Slider");
         return new SliderPage(driver);
     }
+    public ContextMenuPage clickContextMenu (){
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
