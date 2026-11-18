@@ -22,5 +22,8 @@ public class ContextMenuPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(hotSpotBox));
         actions.contextClick(driver.findElement(hotSpotBox)).perform();
     }
-
+    public void alert_accept(){
+//     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+       driver.switchTo().alert().accept();
+    }
 }
