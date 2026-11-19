@@ -36,10 +36,14 @@ public class HomePage {
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
     }
+    public FramesPage clickFramesPage (){
+        clickLink("Frames Page");
+        return new FramesPage(driver);
+    }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
-        }
+    }
 
     public HomePage(WebDriver driver) {this.driver=driver;}
 
