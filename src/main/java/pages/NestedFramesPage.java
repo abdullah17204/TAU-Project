@@ -16,21 +16,21 @@ public class NestedFramesPage {
         switchToFrame(TopFrame);
         switchToFrame(LeftFrame);
         String text = driver.findElement(body).getText();
-        switchToParentFrame();
+        switchToDefaultContext();
         return text;
     }
     public String getBottomFrameText() {
         switchToFrame(BottomFrame);
         String text = driver.findElement(body).getText();
-        switchToParentFrame();
+        switchToDefaultContext();
         return text;
     }
 
     private void switchToFrame(String frameName) {
         driver.switchTo().frame(frameName);
     }
-    private void switchToParentFrame() {
-        driver.switchTo().parentFrame();
+    private void switchToDefaultContext() {
+        driver.switchTo().defaultContent();
     }
 }
 

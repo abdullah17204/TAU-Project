@@ -37,7 +37,7 @@ public class HomePage {
         return new ContextMenuPage(driver);
     }
     public FramesPage clickFrames(){
-        clickLink("Frames Page");
+        clickLink("Frames");
         return new FramesPage(driver);
     }
     private void clickLink(String linkText) {
