@@ -40,6 +40,10 @@ public class HomePage {
         clickLink("Frames");
         return new FramesPage(driver);
     }
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
     private void clickLink(String linkText) {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText))).click();
