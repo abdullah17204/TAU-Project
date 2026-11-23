@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DynamicLoadingE2Page;
 import pages.DynamicLoadingPage;
@@ -17,6 +18,8 @@ public class NavigationTests extends BaseTests{
 //        getWindowManager().refresh();
 //        getWindowManager().forward();
 //        getWindowManager().goTo("https://www.google.com");
-
+        DynamicLoadingE2Page dynamicLoadingE2Page = dynamicLoadingPage.rightClickExample2();
+        getWindowManager().switchToTab("The internet");
+        Assert.assertTrue(dynamicLoadingE2Page.confirmButtonIsDisplayed());
     }
 }

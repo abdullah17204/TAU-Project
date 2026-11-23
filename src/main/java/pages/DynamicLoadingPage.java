@@ -17,11 +17,10 @@ public class DynamicLoadingPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(example2)).click();
         return new DynamicLoadingE2Page(driver);
     }
-//    public DynamicLoadingE2Page rightClickExample2(){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(example2));
-//
-//        driver.findElement(example2).sendKeys(Keys.CONTROL, Keys.RETURN);
-//        return new DynamicLoadingE2Page(driver);
-//    }
+    public DynamicLoadingE2Page rightClickExample2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(example2));
+        driver.findElement(example2).sendKeys(Keys.CONTROL, Keys.RETURN);
+        return new DynamicLoadingE2Page(driver);
+    }
 }
