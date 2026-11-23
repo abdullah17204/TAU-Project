@@ -19,7 +19,7 @@ public class NavigationTests extends BaseTests{
 //        getWindowManager().forward();
 //        getWindowManager().goTo("https://www.google.com");
         DynamicLoadingE2Page dynamicLoadingE2Page = dynamicLoadingPage.rightClickExample2();
-        getWindowManager().switchToTab("The internet");
+        getWindowManager().switchToNewTab();
         Assert.assertTrue(dynamicLoadingE2Page.confirmButtonIsDisplayed());
     }
 }

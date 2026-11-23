@@ -11,5 +11,24 @@ public class WindowManager {
     public void refresh() {driver.navigate().refresh();}
     public void goTo(String url) {driver.navigate().to(url);}
 
-    public void switchToTab(String tabName) {driver.switchTo().window(tabName);}
+    public void switchToNewTab() {
+        String current = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(current)) {
+                driver.switchTo().window(handle);
+                return;
+            }
+        }
+        throw new RuntimeException("No new tab found");
+    }
+
+    public void switchToTab(String tabTitle) {
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(tabTitle)) {
+                return;
+            }
+        }
+        throw new RuntimeException("No tab found with title: " + tabTitle);
+    }
 }
