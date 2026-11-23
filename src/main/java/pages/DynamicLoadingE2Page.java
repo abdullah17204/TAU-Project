@@ -16,6 +16,11 @@ public class DynamicLoadingE2Page {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(startButton)).click();
     }
+    public boolean conformButtonIsDisplayed(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(startButton));
+        return true;
+    }
     public String getFinishConformation(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.elementToBeClickable(finishMessage)).getText();

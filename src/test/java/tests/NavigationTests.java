@@ -18,6 +18,6 @@ public class NavigationTests extends BaseTests{
 //        getWindowManager().forward();
 //        getWindowManager().goTo("https://www.google.com");
 
-
+        var finishMessage = homePage.clickDynamicLoading().clickExample2().clickStartButton();
     }
 }
