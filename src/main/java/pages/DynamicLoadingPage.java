@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,13 @@ public class DynamicLoadingPage {
     public DynamicLoadingE2Page clickExample2 (){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(example2)).click();
+        return new DynamicLoadingE2Page(driver);
+    }
+    public DynamicLoadingE2Page rightClickExample2(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(example2));
+
+        driver.findElement(example2).sendKeys(Keys.CONTROL, Keys.RETURN);
         return new DynamicLoadingE2Page(driver);
     }
 }

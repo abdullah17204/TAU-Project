@@ -10,8 +10,8 @@
 <!--            <class name="tests.HoversTests"/>-->
 <!--            <class name="tests.SliderTests"/>-->
 <!--            <class name="tests.ContextMenuTests"/>-->
-<!--                <class name="tests.FramesTests"/>-->
-            <class name="tests.DynamicLoadingTests"/>
+<!--            <class name="tests.FramesTests"/>-->
+                <class name="tests.DynamicLoadingTests"/>
         </classes>
     </test>
 

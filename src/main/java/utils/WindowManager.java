@@ -10,4 +10,6 @@ public class WindowManager {
     public void forward() {driver.navigate().forward();}
     public void refresh() {driver.navigate().refresh();}
     public void goTo(String url) {driver.navigate().to(url);}
+
+    public void switchToTab(String tabName) {driver.switchTo().window(tabName);}
 }
