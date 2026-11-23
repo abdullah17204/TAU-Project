@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pages.LoginPage;
+import utils.WindowManager;
 
 public class BaseTests {
     protected WebDriver driver;
@@ -27,5 +28,9 @@ public class BaseTests {
     @AfterMethod
     public void tearDown(){
         driver.quit();
+    }
+
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
     }
 }

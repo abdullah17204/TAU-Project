@@ -2,9 +2,9 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 
-public class Navigation {
+public class WindowManager {
     private WebDriver driver;
-    public Navigation(WebDriver driver) {this.driver = driver;}
+    public WindowManager(WebDriver driver) {this.driver = driver;}
 
     public void back() {driver.navigate().back();}
     public void forward() {driver.navigate().forward();}
