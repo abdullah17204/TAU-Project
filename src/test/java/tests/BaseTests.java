@@ -1,13 +1,16 @@
 package tests;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 import pages.LoginPage;
 import utils.WindowManager;
+
+import java.io.File;
 
 public class BaseTests {
     protected WebDriver driver;
@@ -25,9 +28,16 @@ public class BaseTests {
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
     }
-    @AfterMethod
+    @AfterClass
     public void tearDown(){
         driver.quit();
+    }
+
+    @AfterMethod
+    public void takeScreenShot(){
+        var camera = (TakesScreenshot)driver;
+        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        System.out.println("Screenshot taken : "+ screenshot.getAbsolutePath());
     }
 
     public WindowManager getWindowManager(){
