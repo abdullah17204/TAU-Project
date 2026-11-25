@@ -6,9 +6,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
-import pages.LoginPage;
 import utils.WindowManager;
 
 import java.io.File;
@@ -36,7 +36,8 @@ public class BaseTests {
     }
 
     @AfterMethod
-    public void takeScreenShot(){
+    public void recordFailure(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
         var camera = (TakesScreenshot)driver;
         File screenshot = camera.getScreenshotAs(OutputType.FILE);
         try {
@@ -45,6 +46,7 @@ public class BaseTests {
             e.printStackTrace();
         }
         System.out.println("Screenshot taken : "+ screenshot.getAbsolutePath());
+        }
     }
 
     public WindowManager getWindowManager(){
