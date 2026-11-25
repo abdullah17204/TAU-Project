@@ -8,9 +8,9 @@
 <!--            <class name="tests.DropDownTests"/>-->
 <!--            <class name="tests.ForgotPasswordTests"/>-->
 <!--            <class name="tests.HoversTests"/>-->
-<!--            <class name="tests.SliderTests"/>-->
+            <class name="tests.SliderTests"/>
 <!--            <class name="tests.ContextMenuTests"/>-->
-            <class name="tests.FramesTests"/>
+<!--            <class name="tests.FramesTests"/>-->
 <!--        <class name="tests.NavigationTests"/>-->
         </classes>
     </test>

@@ -30,7 +30,7 @@ public class BaseTests {
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
     }
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
         driver.quit();
     }
@@ -41,7 +41,7 @@ public class BaseTests {
         var camera = (TakesScreenshot)driver;
         File screenshot = camera.getScreenshotAs(OutputType.FILE);
         try {
-            Files.move(screenshot,new File("C:\\Users\\abdul\\IdeaProjects\\TestProject\\resources\\screenshots\\test.png"));
+            Files.move(screenshot,new File("C:\\Users\\abdul\\IdeaProjects\\TestProject\\resources\\screenshots\\" + result.getMethod().getMethodName() + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
