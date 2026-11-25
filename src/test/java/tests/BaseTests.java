@@ -1,5 +1,6 @@
 package tests;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import pages.LoginPage;
 import utils.WindowManager;
 
 import java.io.File;
+import java.io.IOException;
 
 public class BaseTests {
     protected WebDriver driver;
@@ -37,6 +39,11 @@ public class BaseTests {
     public void takeScreenShot(){
         var camera = (TakesScreenshot)driver;
         File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        try {
+            Files.move(screenshot,new File("C:\\Users\\abdul\\IdeaProjects\\TestProject\\resources\\screenshots\\test.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Screenshot taken : "+ screenshot.getAbsolutePath());
     }
 
