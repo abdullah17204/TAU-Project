@@ -8,17 +8,17 @@ public class CookieManager {
     public CookieManager(WebDriver driver) {
         this.driver = driver;
     }
-    private void addCookie(Cookie cookie){
+    public void addCookie(Cookie cookie){
         driver.manage().addCookie(cookie);
     }
-    private void deleteCookie(Cookie cookie){
+    public void deleteCookie(Cookie cookie){
         driver.manage().deleteCookie(cookie);
     }
-    private boolean cookieExist(Cookie cookie){
+    public boolean cookieExist(Cookie cookie){
         return driver.manage().getCookieNamed(cookie.getName()) != null;
     }
-    public Cookie buildCookie(String cookieName){
-        return new Cookie.Builder("TAU","123")
+    public Cookie buildCookie(String cookieName,String cookieValue){
+        return new Cookie.Builder(cookieName,cookieValue)
                 .domain("the-internet.herokuapp.com").build();
     }
 }
