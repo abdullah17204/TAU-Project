@@ -9,7 +9,7 @@ public class CookieTests extends BaseTests{
     @Test
     public void CookieTest(){
         var CookieManger = new CookieManager(driver);
-        Cookie cookie = CookieManger.buildCookie("TAU","123");
+        Cookie cookie = CookieManger.buildCookie("optimizelyBuckets","%7B%7D");
         CookieManger.deleteCookie(cookie);
         Assert.assertFalse(CookieManger.cookieExist(cookie),"Cookie was not deleted");
     }
