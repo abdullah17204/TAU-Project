@@ -1,6 +1,7 @@
 package tests;
 
 import com.google.common.io.Files;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -51,5 +52,9 @@ public class BaseTests {
 
     public WindowManager getWindowManager(){
         return new WindowManager(driver);
+    }
+    private void setCookie(){
+        Cookie cookie = new Cookie.Builder("TAU","123")
+                .domain("https://the-internet.herokuapp.com").build();
     }
 }
